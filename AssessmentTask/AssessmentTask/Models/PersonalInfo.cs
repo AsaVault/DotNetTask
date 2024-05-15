@@ -9,6 +9,8 @@ namespace AssessmentTask.Models
         public bool IsMandated { get; set; }
         public bool IsInternal { get; set; }
         public bool IsHidden { get; set; }
+        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
+        public DateTime DateModified { get; set; } = DateTime.UtcNow;
     }
 
     public class PersonalInfoInput : PersonalInfo

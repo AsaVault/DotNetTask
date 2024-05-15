@@ -1,5 +1,4 @@
-﻿using AssessmentTask.Models.DotNetTasks.Models;
-using AssessmentTask.Models;
+﻿using AssessmentTask.Models;
 
 namespace AssessmentTask.DTO
 {

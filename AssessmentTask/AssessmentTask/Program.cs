@@ -1,4 +1,6 @@
 
+using AssessmentTask.Profiles;
+
 namespace AssessmentTask
 {
     public class Program
@@ -13,7 +15,7 @@ namespace AssessmentTask
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
             IConfiguration configuration = new ConfigurationBuilder()
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .Build();

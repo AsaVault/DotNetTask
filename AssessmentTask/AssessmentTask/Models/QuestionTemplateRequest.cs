@@ -9,5 +9,7 @@ namespace AssessmentTask.Models
         public bool Choice { get; set; }
         public bool Other { get; set; }
         public bool MaxChoiceAllowed { get; set; }
+        public DateTime DateCreated { get; set; } = DateTime.UtcNow;
+        public DateTime DateModified { get; set; } = DateTime.UtcNow;
     }
 }
