@@ -14,6 +14,22 @@ namespace AssessmentTask
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            IConfiguration configuration = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            .Build();
+
+            //string connectionString = configuration["CosmosDb:Account"];
+
+            builder.Services.AddSwaggerGen();
+            builder.Services.AddCosmosRepository(options =>
+            {
+                options.CosmosConnectionString = configuration["CosmosDb:ConnectionString"];
+                options.DatabaseId = configuration["CosmosDb:DatabaseName"];
+                options.ContainerId = configuration["CosmosDb:ContainerName"];
+                options.ContainerPerItemType = true;
+
+            });
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
